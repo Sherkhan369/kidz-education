@@ -80,7 +80,7 @@ function playLesson(videoSource, clickedBtn, quizType = false, audioSource = nul
       <img src="images/apple.png" class="quiz-corner-img apple-img" data-audio="appleAudio" onclick="playImageAudio(this)">
       </div>
       <img src="images/hook.png" class="quiz-corner-img quizImg" data-audio="hookAudio" onclick="playImageAudio(this)">
-       <img src="images//aero.png" class="quiz-corner-img quizImg arrow" data-audio="hookAudio" onclick="playImageAudio(this)">
+       <img src="images/aero.png" class="quiz-corner-img quizImg arrow" data-audio="aeroAudio" onclick="playImageAudio(this)">
      
     `;
 

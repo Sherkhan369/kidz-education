@@ -178,7 +178,9 @@ body {
 .quiz img:hover {
   transform: scale(1.1);
 }
-
+.img-arrow{
+  transform: rotate(-45deg);
+}
 .apple {
   display: flex;
   align-items: center;
@@ -197,34 +199,39 @@ body {
 
 .quiz .arrow {
   position: absolute;
-  left: 30%;
-  top: 30%;
   transform: rotate(-45deg);
+  /* transform: translate(-50%, -50%) rotate(-45deg);
+  width: clamp(120px, 20%, 250px);
+  height: auto; */
   max-width: 250px;
- cursor: pointer;
-  z-index: 10;
+  cursor: pointer;
+  z-index: 25;
 }
-.img-arrow{
-  
-  transform:rotate(-45deg);
-   
-}
+
 /* ========== BUTTON SECTION (RIGHT) ========== */
 .button-section {
+  flex: 0 0 30%;
   width: 30%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: flex-start;
   gap: 10px;
-  padding-top: 10px;
+  padding: 10px;
+  overflow-y: auto;
 }
+
 .lesson-btn {
-  width: 250px;
+  width: 100%;
+  max-width: 250px;
+  height: auto;
   background: transparent;
   cursor: pointer;
-}
-.hidden {
-  display: none !important;
+  border: none;
+  transition:
+    transform 0.2s ease,
+    opacity 0.2s ease;
+  display: block;
 }
 
 .lesson-btn:hover {
@@ -309,7 +316,6 @@ body {
   .lesson-btn {
     width: 100%;
   }
-
   .quiz {
     padding: 15px;
     gap: 15px;
@@ -329,14 +335,14 @@ body {
 
   /* Adjusted overlay positions for tablet */
   .apple-obj {
-    width: 12%;
+    width: 11%;
     top: 56%;
     left: 73.5%;
   }
 
   .aeroplane-obj {
     width: 28%;
-    top: 45%;
+    top: 46%;
     left: 7%;
   }
 
@@ -361,14 +367,14 @@ body {
   }
 
   .button-section {
-    grid-template-columns: 2fr 1.3fr;
-    grid-template-rows: repeat(4, 1fr);
-    gap: 6px;
-    padding: 6px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    padding: 12px;
   }
   .lesson-btn {
     width: 100%;
-    height: 100%;
   }
 
   .quiz {
@@ -397,27 +403,27 @@ body {
 
   /* Mobile overlay adjustments */
   .apple-obj {
-    width: 12%;
+    width: 10%;
     top: 56%;
-    left: 74%;
+    left: 73%;
   }
 
   .aeroplane-obj {
-    width: 28%;
+    width: 26%;
     top: 46%;
-    left: 9%;
+    left: 7%;
   }
 
   .ant-obj {
-    width: 26%;
-    top: 75.5%;
-    left: 61%;
+    width: 24%;
+    top: 74.5%;
+    left: 60%;
   }
 
   .avoid-obj {
-    width: 7%;
+    width: 5%;
     top: 78%;
-    left: 37%;
+    left: 38%;
   }
 }
 
@@ -427,14 +433,6 @@ body {
     height: 40vh;
     min-height: 250px;
   }
-.home-background {
-  
-  width: 100%;
-  height: 97%;
-  object-fit: contain;
-  display: block;
-
-}
 
   .button-section {
     grid-template-columns: repeat(2, 1fr);
@@ -470,80 +468,30 @@ body {
   /* Extra small mobile overlay adjustments */
   .apple-obj {
     width: 9%;
-    top: 55%;
-    left: 68%;
+    top: 57%;
+    left: 72.5%;
   }
 
   .aeroplane-obj {
-    width: 23%;
-    top: 46%;
-    left: 17%;
-  }
-
-  .ant-obj {
-    width: 20%;
-    top: 72%;
-    left: 59%;
-  }
-
-  .avoid-obj {
-    width: 6%;
-    top: 73%;
-    left: 39.5%;
-  }
-}
-
-/* ========== EXTRA SMALL MOBILE (≤400px) ========== */
-
-@media (max-width: 575px){
-  .home-background {
-    height: 100%;
-
-  }
-  .aeroplane-obj {
-    width: 27%;
-    top: 45%;
-    left: 14%;
+    width: 24%;
+    top: 47%;
+    left: 7.5%;
   }
 
   .ant-obj {
     width: 22%;
-    top: 74%;
-    left: 59%;
-  }
-
-  .avoid-obj {
-    width: 6%;
     top: 75%;
-    left: 39%;
-  }
-}
-
-@media (min-width: 390px) and (max-width: 499px) {
-  .apple-obj {
-    width: 12%;
-    top: 55%;
-    left: 74%;
-  }
-  .aeroplane-obj {
-    width: 27%;
-    top: 46%;
-    left: 9%;
-  }
-
-  .ant-obj {
-    width: 24%;
-    top: 74%;
-    left: 62%;
+    left: 59.5%;
   }
 
   .avoid-obj {
-    width: 6%;
-    top: 76%;
+    width: 4.5%;
+    top: 78.5%;
     left: 38%;
   }
 }
 
+/* ========== EXTRA SMALL MOBILE (≤400px) ========== */
 @media (max-width: 400px) {
   .video-section {
     height: 35vh;
