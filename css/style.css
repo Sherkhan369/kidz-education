@@ -1,0 +1,581 @@
+/* ========== RESET ========== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #fff;
+  overflow-x: hidden;
+}
+
+/* ========== MAIN IMAGE ========== */
+#main-image {
+  width: 80%;
+  max-height: 100vh;
+  display: block;
+  margin: 0 auto;
+  object-fit: contain;
+}
+
+/* ========== MAIN LAYOUT ========== */
+.container {
+  display: flex;
+  width: 80%;
+  max-width: 1600px;
+  height: 100vh;
+  margin: 0 auto;
+}
+
+/* ========== VIDEO SECTION (LEFT) ========== */
+.video-section {
+  flex: 0 0 70%;
+  width: 70%;
+  position: relative;
+  overflow: hidden;
+}
+
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ========== HOME BACKGROUND ========== */
+.home-background {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+/* ========== OVERLAY OBJECTS ========== */
+.home-object {
+  position: absolute;
+  cursor: pointer;
+  z-index: 10;
+  transition: transform 0.2s ease;
+  max-width: 100%;
+  height: auto;
+}
+
+.home-object:hover {
+  transform: scale(1.05);
+}
+
+.apple-obj {
+  width: 12%;
+  left: 74.5%;
+  top: 55%;
+}
+
+.aeroplane-obj {
+  width: 30%;
+  left: 6%;
+  top: 45%;
+}
+
+.ant-obj {
+  width: 27%;
+  left: 60.7%;
+  top: 73.5%;
+}
+
+.avoid-obj {
+  width: 6%;
+  left: 38%;
+  top: 77%;
+}
+
+/* ========== VIDEO ========== */
+.video-wrapper video {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: none;
+}
+
+/* ========== VIDEO BUTTONS ========== */
+.video-btn {
+  position: absolute;
+  bottom: 10px;
+  background: #ffd500;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 12px;
+  font-size: 18px;
+  cursor: pointer;
+  z-index: 100;
+  transition:
+    background 0.3s ease,
+    transform 0.2s ease;
+  min-width: 40px;
+  min-height: 40px;
+}
+
+.video-btn:hover {
+  background: #ffdd33;
+  transform: translateY(-2px);
+}
+
+.video-btn:active {
+  transform: translateY(0);
+}
+
+.sound-btn {
+  left: 10px;
+}
+
+.close-btn {
+  right: 10px;
+}
+
+/* ========== QUIZ OVERLAY ========== */
+.quiz {
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.95);
+  z-index: 20;
+  padding: 20px;
+  display: none;
+}
+
+.quiz.object-with-letter,
+.quiz.letter-activity {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 20px;
+  align-items: center;
+  justify-items: center;
+}
+
+.quiz-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.quiz img {
+  width: 100%;
+  max-width: 190px;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: contain;
+  cursor: pointer;
+  display: block;
+  transition: transform 0.2s ease;
+}
+
+.quiz img:hover {
+  transform: scale(1.1);
+}
+
+.apple {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.apple img {
+  width: 100%;
+  max-width: 140px;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: contain;
+}
+
+.quiz .arrow {
+  position: absolute;
+  left: 30%;
+  top: 30%;
+  transform: rotate(-45deg);
+  max-width: 250px;
+ cursor: pointer;
+  z-index: 10;
+}
+.img-arrow{
+  
+  transform:rotate(-45deg);
+   
+}
+/* ========== BUTTON SECTION (RIGHT) ========== */
+.button-section {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding-top: 10px;
+}
+.lesson-btn {
+  width: 250px;
+  background: transparent;
+  cursor: pointer;
+}
+.hidden {
+  display: none !important;
+}
+
+.lesson-btn:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+.lesson-btn:active {
+  transform: scale(0.98);
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* ========== LARGE DESKTOP (≥1440px) ========== */
+@media (min-width: 1440px) {
+  .container {
+    max-width: 1600px;
+  }
+
+  .quiz img {
+    max-width: 230px;
+  }
+
+  .apple img {
+    max-width: 180px;
+  }
+}
+
+/* ========== LAPTOP (≤1199px) ========== */
+@media (max-width: 1199px) {
+  .container {
+    width: 90%;
+  }
+
+  .quiz img {
+    max-width: 170px;
+  }
+
+  .apple img {
+    max-width: 130px;
+  }
+
+  .lesson-btn {
+    max-width: 220px;
+  }
+}
+
+/* ========== TABLET & MOBILE (≤991px) ========== */
+@media (max-width: 991px) {
+  #main-image {
+    width: 100%;
+    height: auto;
+  }
+
+  .container {
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    min-height: 100vh;
+  }
+
+  .video-section {
+    flex: 0 0 auto;
+    width: 100%;
+    height: 50vh;
+    min-height: 300px;
+  }
+
+  .home-background {
+    object-fit: cover;
+  }
+
+  .button-section {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    padding: 12px;
+  }
+  .lesson-btn {
+    width: 100%;
+  }
+
+  .quiz {
+    padding: 15px;
+    gap: 15px;
+  }
+
+  .quiz img {
+    max-width: 140px;
+  }
+
+  .apple img {
+    max-width: 110px;
+  }
+
+  .quiz .arrow {
+    width: clamp(80px, 15%, 150px);
+  }
+
+  /* Adjusted overlay positions for tablet */
+  .apple-obj {
+    width: 12%;
+    top: 56%;
+    left: 73.5%;
+  }
+
+  .aeroplane-obj {
+    width: 28%;
+    top: 45%;
+    left: 7%;
+  }
+
+  .ant-obj {
+    width: 25%;
+    top: 74%;
+    left: 60.5%;
+  }
+
+  .avoid-obj {
+    width: 5.5%;
+    top: 78%;
+    left: 38%;
+  }
+}
+
+/* ========== MOBILE (≤767px) ========== */
+@media (max-width: 767px) {
+  .video-section {
+    height: 45vh;
+    min-height: 280px;
+  }
+
+  .button-section {
+    grid-template-columns: 2fr 1.3fr;
+    grid-template-rows: repeat(4, 1fr);
+    gap: 6px;
+    padding: 6px;
+  }
+  .lesson-btn {
+    width: 100%;
+    height: 100%;
+  }
+
+  .quiz {
+    padding: 10px;
+    gap: 10px;
+  }
+
+  .quiz img {
+    max-width: 100px;
+  }
+
+  .apple img {
+    max-width: 80px;
+  }
+
+  .quiz .arrow {
+    width: clamp(60px, 12%, 100px);
+  }
+
+  .video-btn {
+    font-size: 16px;
+    padding: 6px 10px;
+    min-width: 36px;
+    min-height: 36px;
+  }
+
+  /* Mobile overlay adjustments */
+  .apple-obj {
+    width: 12%;
+    top: 56%;
+    left: 74%;
+  }
+
+  .aeroplane-obj {
+    width: 28%;
+    top: 46%;
+    left: 9%;
+  }
+
+  .ant-obj {
+    width: 26%;
+    top: 75.5%;
+    left: 61%;
+  }
+
+  .avoid-obj {
+    width: 7%;
+    top: 78%;
+    left: 37%;
+  }
+}
+
+/* ========== SMALL MOBILE (≤575px) ========== */
+@media (max-width: 575px) {
+  .video-section {
+    height: 40vh;
+    min-height: 250px;
+  }
+.home-background {
+  
+  width: 100%;
+  height: 97%;
+  object-fit: contain;
+  display: block;
+
+}
+
+  .button-section {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 6px;
+    padding: 6px;
+  }
+
+  .quiz {
+    padding: 8px;
+    gap: 8px;
+  }
+
+  .quiz img {
+    max-width: 80px;
+  }
+
+  .apple img {
+    max-width: 60px;
+  }
+
+  .quiz .arrow {
+    width: clamp(50px, 10%, 80px);
+  }
+
+  .video-btn {
+    font-size: 14px;
+    padding: 5px 8px;
+    min-width: 32px;
+    min-height: 32px;
+    border-radius: 6px;
+  }
+
+  /* Extra small mobile overlay adjustments */
+  .apple-obj {
+    width: 9%;
+    top: 55%;
+    left: 68%;
+  }
+
+  .aeroplane-obj {
+    width: 23%;
+    top: 46%;
+    left: 17%;
+  }
+
+  .ant-obj {
+    width: 20%;
+    top: 72%;
+    left: 59%;
+  }
+
+  .avoid-obj {
+    width: 6%;
+    top: 73%;
+    left: 39.5%;
+  }
+}
+
+/* ========== EXTRA SMALL MOBILE (≤400px) ========== */
+
+@media (max-width: 575px){
+  .home-background {
+    height: 100%;
+
+  }
+  .aeroplane-obj {
+    width: 27%;
+    top: 45%;
+    left: 14%;
+  }
+
+  .ant-obj {
+    width: 22%;
+    top: 74%;
+    left: 59%;
+  }
+
+  .avoid-obj {
+    width: 6%;
+    top: 75%;
+    left: 39%;
+  }
+}
+
+@media (min-width: 390px) and (max-width: 499px) {
+  .apple-obj {
+    width: 12%;
+    top: 55%;
+    left: 74%;
+  }
+  .aeroplane-obj {
+    width: 27%;
+    top: 46%;
+    left: 9%;
+  }
+
+  .ant-obj {
+    width: 24%;
+    top: 74%;
+    left: 62%;
+  }
+
+  .avoid-obj {
+    width: 6%;
+    top: 76%;
+    left: 38%;
+  }
+}
+
+@media (max-width: 400px) {
+  .video-section {
+    height: 35vh;
+    min-height: 220px;
+  }
+
+  .button-section {
+    gap: 4px;
+    padding: 4px;
+  }
+
+  .quiz {
+    padding: 6px;
+    gap: 6px;
+  }
+
+  .quiz img {
+    max-width: 70px;
+  }
+
+  .apple img {
+    max-width: 50px;
+  }
+
+  .quiz .arrow {
+    width: clamp(40px, 8%, 70px);
+  }
+
+  .video-btn {
+    font-size: 12px;
+    padding: 4px 6px;
+    min-width: 28px;
+    min-height: 28px;
+  }
+}

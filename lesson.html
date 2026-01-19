@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <meta name="description" content="Interactive Letter A Lesson for Children">
+  <title>Letter A Lesson</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<main class="container">
+
+  <section class="video-section">
+
+    <div class="video-wrapper" id="videoWrapper">
+    
+      <!-- Home Background Image -->
+      <img id="homeBackground" class="home-background scene" src="images/bg.png" alt="Letter A learning background with interactive objects">
+        
+      <!-- Home Auto-play Audio -->
+      <audio id="homeAudio" src="https://abbasismartwing.com/Smartwings_2025_1/English_Playgroup/Letter_a/ar/973219.mp3" autoplay></audio>
+
+      <!-- Clickable Overlay Objects on Home Background -->
+      <!-- <img src="images/apple.png" class="home-object apple-obj" alt="Click to hear apple sound" data-audio="appleHomeAudio" onclick="playHomeObjectAudio(this)">
+      <img src="images/aeroplane.png" class="home-object aeroplane-obj" alt="Click to hear aeroplane sound" data-audio="aeroplaneHomeAudio" onclick="playHomeObjectAudio(this)">
+      <img src="images/ant.png" class="home-object ant-obj" alt="Click to hear ant sound" data-audio="antHomeAudio" onclick="playHomeObjectAudio(this)">
+      <img src="images/hook.png" class="home-object avoid-obj" alt="Click to hear hook sound" data-audio="hookHomeAudio" onclick="playHomeObjectAudio(this)"> -->
+     
+      <!-- Home Object Audio Files -->
+      <audio id="appleHomeAudio" src="APPLE_HOME_AUDIO_PATH"></audio>
+      <audio id="aeroplaneHomeAudio" src="AEROPLANE_HOME_AUDIO_PATH"></audio>
+      <audio id="antHomeAudio" src="ANT_HOME_AUDIO_PATH"></audio>
+      <audio id="hookHomeAudio" src="HOOK_HOME_AUDIO_PATH"></audio>
+
+      <!-- Lesson Video (Hidden Initially) -->
+      <video id="lessonVideo" playsinline preload="metadata">
+        <source src="https://peblix.libxr.app/blob/app/start.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+
+      <!-- Quiz Overlay (Hidden Initially) -->
+      <div id="quiz" class="quiz hidden object-with-letter">
+        <!-- Button #4 Audio Files -->
+        <audio id="introAudio" src="https://peblix.libxr.app/blob/app/intro.mp3"></audio>
+        <audio id="appleAudio" src="https://peblix.libxr.app/blob/app/apple.mp3"></audio>
+        <audio id="antAudio" src="https://peblix.libxr.app/blob/app/ant.mp3"></audio>
+        <audio id="aeroplaneAudio" src="https://peblix.libxr.app/blob/app/aeroplane.mp3"></audio>
+        <audio id="hookAudio" src="https://abbasismartwing.com/Smartwings_2025_1/English_Playgroup/Letter_a/ar/973537.mp3"></audio>
+        <audio id="aeroAudio" src="https://peblix.libxr.app/blob/app/aero.mp3"></audio>
+        
+        <!-- Button #4 Quiz Images -->
+        <div class="quiz-item">
+          <img src="images/aeroplane.png" class="quiz-corner-img quizImg" alt="Aeroplane - click to hear" data-audio="aeroplaneAudio" onclick="playImageAudio(this)">
+        </div>
+        
+        <div class="quiz-item">
+          <img src="images/ant.png" class="quiz-corner-img quizImg" alt="Ant - click to hear" data-audio="antAudio" onclick="playImageAudio(this)">
+        </div>
+        
+        <div class="quiz-item apple">
+          <img src="images/apple.png" class="quiz-corner-img apple-img" alt="Apple - click to hear" data-audio="appleAudio" onclick="playImageAudio(this)">
+        </div>
+        
+        <div class="quiz-item">
+          <img src="images/hook.png" class="quiz-corner-img quizImg" alt="Hook - click to hear" data-audio="hookAudio" onclick="playImageAudio(this)">
+        </div>
+
+        <!-- Center Arrow with Audio -->
+        <img src="images/aero.png" class="arrow" alt="Direction arrow" data-audio="aeroAudio" onclick="playImageAudio(this)">
+      </div>
+    </div>
+
+    <!-- Video Control Buttons -->
+    <button class="video-btn sound-btn" onclick="toggleSound()" aria-label="Toggle sound">🔊</button>
+    <button class="video-btn close-btn" onclick="closeVideo()" aria-label="Close video">✕</button>
+
+  </section>
+
+  <aside class="button-section">
+
+    <!-- Button #1: Letter Recognition -->
+    <img class="lesson-btn"
+      src="images/letter-recognition.jpeg"
+      alt="Letter Recognition Lesson"
+      data-default="images/letter-recognition.jpeg"
+      data-active="images/lesson.jpeg"
+      data-video="//peblix.libxr.app/blob/app/3.mp4"
+      onclick="playLesson(this.dataset.video, this)">
+
+    <!-- Button #2: Letter Formation -->
+    <img class="lesson-btn"
+      src="images/letter-formation.jpeg"
+      alt="Letter Formation Lesson"
+      data-default="images/letter-formation.jpeg"
+      data-active="images/lesson.jpeg"
+      data-video="//peblix.libxr.app/blob/app/1.mp4"
+      onclick="playLesson(this.dataset.video, this)">
+
+    <!-- Button #3: Letter Sound -->
+    <img class="lesson-btn"
+      src="images/letter-sound.jpeg"
+      alt="Letter Sound Lesson"
+      data-default="images/letter-sound.jpeg"
+      data-active="images/lesson.jpeg"
+      data-video="//peblix.libxr.app/blob/app/2.mp4"
+      onclick="playLesson(this.dataset.video, this)">
+
+    <!-- Button #4: Object with Letter -->
+    <img class="lesson-btn"
+      src="images/object-with-letter.jpeg"
+      alt="Object with Letter Lesson"
+      data-default="images/object-with-letter.jpeg"
+      data-active="images/lesson.jpeg"
+      onclick="playLesson('', this, 'object')">
+
+    <!-- Button #5: Letter Activity -->
+    <img class="lesson-btn"
+      src="images/letter-activity.jpeg"
+      alt="Letter Activity Lesson"
+      data-default="images/letter-activity.jpeg"
+      data-active="images/lesson.jpeg"
+      onclick="playLesson('', this, 'activity')">
+
+    <!-- Button #6: World Around Us -->
+    <img class="lesson-btn"
+      src="images/world-around.png"
+      alt="World Around Us Lesson"
+      data-default="images/world-around.png"
+      data-active="images/lesson.jpeg"
+      data-video="https://abbasismartwing.com/Smartwings_2025_1/English_Playgroup/Letter_a/vr/Vi7.mp4"
+      data-audio="https://abbasismartwing.com/Smartwings_2025_1/English_Playgroup/Letter_a/ar/973525.mp3"
+      onclick="playLesson(this.dataset.video, this, false, this.dataset.audio)">
+
+  </aside>
+
+</main>
+
+<script src="js/app.js"></script>
+</body>
+</html>
